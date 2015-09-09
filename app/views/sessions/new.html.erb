@@ -1,0 +1,17 @@
+<h1>ログイン</h1>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+<p>
+	<%= f.label :email %><br>
+	<%= f.text_field :email %><br>
+	<%= f.label :password %><br>
+	<%= f.text_field :password %><br>
+
+</p>
+
+<p>	<%= f.submit "サインイン" %></p>
+
+<% end %>
+
+<p>New User? <%= link_to "会員登録", signup_path %></p>
+<p><%= link_to "TOPへ戻る", tops_path %></p>

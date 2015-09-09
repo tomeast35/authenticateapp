@@ -6,4 +6,9 @@
 	<% end %>
 </ul>
 
-<p><%= link_to "Register", new_user_path %></p>
+<p><%= link_to "Register", signup_path %></p>
+<p><%= link_to "Login", signin_path %></p>
+<% if current_user %>
+	<p><%= current_user.email %></p>
+
+<% end %>
