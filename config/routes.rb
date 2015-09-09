@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   resources :tops
   resources :users
-  resources :sessions
+  resources :sessions, only: [:create]
 
   match 'signup', to: 'users#new', via: 'get'
   match 'signin', to: 'sessions#new', via: 'get'
-  match 'signout', to: 'sessions#destroy', via: 'delete'
+  match '/signout', to: 'sessions#destroy', via: 'get'
   root 'tops#index'
 
 
