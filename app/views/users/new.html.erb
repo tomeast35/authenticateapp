@@ -1,0 +1,23 @@
+<h1>Users</h1>
+
+<%= form_for @user do |f| %>
+
+<p>
+	<%= f.label :email %><br>
+	<%= f.text_field :email %><br>
+	<%= f.label :password %><br>
+	<%= f.text_field :password %><br>
+	<%= f.label :password_confirmation %><br>
+	<%= f.text_field :password_confirmation %>
+	<% if @user.errors.any? %>
+	<%= @user.errors.messages[:email][0]%>
+	<%= @user.errors.messages[:password][0]%>
+	<%= @user.errors.messages[:password_confirmation][0]%>
+	<% end %>
+</p>
+
+<p>
+	<%= f.submit %>
+</p>
+
+<% end %>
