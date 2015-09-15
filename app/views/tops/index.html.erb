@@ -4,11 +4,6 @@
 <p>ログイン中のユーザーは<%= current_user.email %>です</p>
 <% end %>
 
-<ul>
-	<% @users.each do |user| %>	
-	<li><%= link_to user.email, user_path(user.id) %></li>
-	<% end %>
-</ul>
-
 <p><%= link_to "Register", signup_path %></p>
 <p><%= link_to "Login", signin_path %></p>
+<p><%= link_to "Logout", signout_path %></p>
